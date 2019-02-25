@@ -24,6 +24,8 @@ int Partition(int A[],int left,int right){
 void quicksort(int A[],int left,int right){
     if(left<right){
         int pos=Partition(A,left,right);
+        // 找到当前数组段内的pos值，然后对这个值左右的数组段进行继续快排，
+        // 快排是不稳定的，因为可能因为分区导致发生顺序交换
         quicksort(A,left,pos-1);
         quicksort(A,pos+1,right);
     }
