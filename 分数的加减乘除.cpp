@@ -11,6 +11,7 @@ struct Fraction{
 int gcd1(int a,int b){
     return !b ? a:gcd(b,a%b);
 }
+// 分数的加减乘除用到了最大公约数，最小公倍数，
 //分数的化简
 Fraction reduction(Fraction result){
     if(result.down<0){
