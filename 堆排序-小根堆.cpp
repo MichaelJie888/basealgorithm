@@ -4,7 +4,7 @@
 using namespace std;
 int heap[11]={0,3,1,2,8,7,5,9,4,6,0};
 int n=10;
-void downjust(int low,int high){
+void downjust(int low,int high){//大的往上调
     int i=low,j=i*2;
     while(j<=high){
         if(j+1<=high && heap[j+1]>heap[j]){
@@ -21,20 +21,15 @@ void downjust(int low,int high){
 }
 
 void heapsort(){
-    for (int i = n/2; i >=1; i--) {//为什么一定要创建堆，直接进行排序不就行了吗
+    for (int i = n/2; i >=1; i--) {//从最后那个不是叶节点的地方开始
         downjust(i,n);
-        cout<<"创建堆之后"<<endl;
-        for (int i = 0; i <=n; i++) {
-            cout<<heap[i]<<" ";
         }
         cout<<endl;
     }
 
-    for (int j = n; j >1 ; j--) {
+    for (int j = n; j >1 ; j--) {//从最后一个节点开始，交换，下调
         swap(heap[j],heap[1]);
         downjust(1,j-1);
-        for (int i = 0; i <=n; i++) {
-            cout<<heap[i]<<" ";
         }
         cout<<endl;
     }

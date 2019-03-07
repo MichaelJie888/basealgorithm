@@ -13,8 +13,8 @@ const int maxn=100;
 // 实际上归并排序是在two point基础之上衍生而来的，因为其核心代码就是对两段数组进行合并，而合并过程用到了扫描指针
 // 
 void merge(int A[],int L1,int R1,int L2,int R2){
-    int i=L1,j=L2;
-    int temp[10],index=0;
+    int i=L1,j=L2;//定义两个指针，作用就是用来扫描
+    int temp[10],index=0;//来进行存储，从零开始存储
     while(i<=R1 && j<=R2){
         if(A[i]<=A[j]){
             temp[index++]=A[i++];
@@ -25,7 +25,7 @@ void merge(int A[],int L1,int R1,int L2,int R2){
     while(i<=R1) temp[index++]=A[i++];
     while(j<=R2) temp[index++]=A[j++];
     for (int k = 0; k < index; k++) {
-        A[L1+k]=temp[k];
+        A[L1+k]=temp[k];//把临时空间的数值放到原来的数组中
     }
 
 
