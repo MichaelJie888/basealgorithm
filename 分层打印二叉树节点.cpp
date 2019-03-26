@@ -14,6 +14,7 @@ void PrintLayer(node* root){
 
         if(now->rchild){
             nextlevel++;
+            // 统计下一组数目
             s.push(now->rchild);
         }
         if(now->lchild){
@@ -23,6 +24,7 @@ void PrintLayer(node* root){
 
         s.pop();
         --toBePrint;
+        // 每统计一个就减少一个需要被打印的数目，然后
         if(toBePrint==0){
             printf("\n");
             toBePrint=nextlevel;
