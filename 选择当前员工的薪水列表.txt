@@ -1,0 +1,5 @@
+1. select salary from salaries  where to_date='9999-01-01' group by salary order by salary desc;
+2. SELECT DISTINCT salary FROM salaries WHERE to_date = '9999-01-01' ORDER BY salary DESC
+对于distinct,groupby的性能。
+数据量非常巨大时候，比如1000万中有300W重复数据，这时候的distinct的效率略好于group by；
+对于相对重复量较小的数据量比如1000万中1万的重复量，用groupby的性能会远优于distnct。
