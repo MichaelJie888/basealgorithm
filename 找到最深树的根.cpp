@@ -66,7 +66,7 @@ void DDfs(int i,int dp,int& depth){
     if(depth<dp){
         depth=dp;
     }
-    for (int j = 0; j <G[j].size() ; ++j) {
+    for (int j = 0; j <G[i].size() ; ++j) {
         if(visd[G[i][j]]==false){
             DDfs(G[i][j],dp+1,depth);
         }
